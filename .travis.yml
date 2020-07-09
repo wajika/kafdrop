@@ -27,3 +27,7 @@ install:
 
 script:
   - ./ci-script.sh
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build -t wajika/kafdrop-docker:latest .
+  - docker push wajika/kafdrop-docker:latest
+  
