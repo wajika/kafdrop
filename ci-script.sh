@@ -26,14 +26,14 @@ mvn -B clean integration-test package assembly:single docker:build
 
 if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
   if [ $DOCKER_PUSH_ENABLED = 1 ]; then 
-    docker push docker.io/obsidiandynamics/kafdrop:$app_ver
+    docker push docker.io/wajika/kafdrop:$app_ver
   fi
 
   repo_url=https://api.github.com/repos/obsidiandynamics/kafdrop
   if [[ ! $app_ver =~ "-SNAPSHOT" ]]; then
     echo "Release version"
     if [ $DOCKER_PUSH_ENABLED = 1 ]; then 
-      docker push docker.io/obsidiandynamics/kafdrop:latest
+      docker push docker.io/wajika/kafdrop:latest
     fi
 
     if [ $GITHUB_RELEASE_ENABLED = 1 ]; then
