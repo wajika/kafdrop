@@ -33,7 +33,7 @@ before_script:
   - ls -lh
   - ./ci-script.sh
 
-after_success:
-  - docker build -t wajika/kafdrop-docker:latest .
-  - docker push wajika/kafdrop-docker:latest
+# after_success:
+#   - docker build -t wajika/kafdrop-docker:latest .
+#   - docker push wajika/kafdrop-docker:latest
   
