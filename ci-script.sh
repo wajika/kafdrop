@@ -2,8 +2,8 @@
 
 if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
   # only require these variables if building off the main repo
-  if [ -z $REG_USER ]; then echo "REG_USER not set"; exit 1; fi
-  if [ -z $REG_PASS ]; then echo "REG_PASS not set"; exit 1; fi
+  if [ -z $DOCKER_USERNAME ]; then echo "DOCKER_USERNAME not set"; exit 1; fi
+  if [ -z $DOCKER_PASSWORD ]; then echo "DOCKER_PASSWORD not set"; exit 1; fi
   if [ -z $GITHUB_USER ]; then echo "GITHUB_USER not set"; exit 1; fi
   if [ -z $GITHUB_PASS ]; then echo "GITHUB_PASS not set"; exit 1; fi
   if [ -z $BINTRAY_USER ]; then echo "BINTRAY_USER not set"; exit 1; fi
@@ -11,12 +11,12 @@ if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
 fi
 
 DOCKER_PUSH_ENABLED=1
-BINTRAY_UPLOAD_ENABLED=1
+BINTRAY_UPLOAD_ENABLED=0
 GITHUB_RELEASE_ENABLED=1
 
 set -e
 if [ "$TRAVIS_PULL_REQUEST" = "false" -a $DOCKER_PUSH_ENABLED = 1 ]; then
-  echo "$REG_PASS" | docker login -u $REG_USER --password-stdin
+  echo "$REG_PASS" | docker login -u $DOCKER_USERNAME --password-stdin
 fi
 
 set -x
