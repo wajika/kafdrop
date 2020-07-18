@@ -29,7 +29,7 @@ if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
     docker push wajika/kafdrop:$app_ver
   fi
 
-  repo_url=https://api.github.com/repos/obsidiandynamics/kafdrop
+  repo_url=https://api.github.com/repos/wajika/kafdrop
   if [[ ! $app_ver =~ "-SNAPSHOT" ]]; then
     echo "Release version"
     if [ $DOCKER_PUSH_ENABLED = 1 ]; then 
