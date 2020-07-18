@@ -14,8 +14,8 @@ services:
 jdk:
   - openjdk11
 
-env:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+# env:
+#   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
 cache:
   directories:
@@ -30,7 +30,6 @@ install:
 
 
 before_script:
-  - ls -lh
   - ./ci-script.sh
 
 # after_success:
