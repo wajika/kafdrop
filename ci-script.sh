@@ -6,8 +6,8 @@ if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
   if [ -z $DOCKER_PASSWORD ]; then echo "DOCKER_PASSWORD not set"; exit 1; fi
   if [ -z $GITHUB_USER ]; then echo "GITHUB_USER not set"; exit 1; fi
   if [ -z $GITHUB_PASS ]; then echo "GITHUB_PASS not set"; exit 1; fi
-  if [ -z $BINTRAY_USER ]; then echo "BINTRAY_USER not set"; exit 1; fi
-  if [ -z $BINTRAY_KEY ]; then echo "BINTRAY_KEY not set"; exit 1; fi
+#   if [ -z $BINTRAY_USER ]; then echo "BINTRAY_USER not set"; exit 1; fi
+#   if [ -z $BINTRAY_KEY ]; then echo "BINTRAY_KEY not set"; exit 1; fi
 fi
 
 DOCKER_PUSH_ENABLED=1
