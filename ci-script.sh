@@ -16,7 +16,7 @@ GITHUB_RELEASE_ENABLED=1
 
 set -e
 if [ "$TRAVIS_PULL_REQUEST" = "false" -a $DOCKER_PUSH_ENABLED = 1 ]; then
-  echo "$REG_PASS" | docker login -u $DOCKER_USERNAME --password-stdin
+  echo "$DOCKER_PASSWORD" | docker login -u $DOCKER_USERNAME --password-stdin
 fi
 
 set -x
